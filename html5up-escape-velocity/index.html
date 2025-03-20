@@ -1,15 +1,4 @@
-from datetime import datetime
 
-now=datetime.now()
-today_date=f"{now.year}년 {now.month}월 {now.day}일"
-
-#파이썬으로 html만들기
-
-file_name="index.html"
-title_text="연습용 웹사이트"
-
-main_text="<p>연습 웹사이트 첫번째<br>연습 웹사이트 첫번째<br>연습 웹사이트 첫번째<br></p>"
-html_text=f"""
 <!DOCTYPE HTML>
 
 <html>
@@ -37,20 +26,20 @@ html_text=f"""
 
 			<!-- Main -->
 				<div id="main" class="wrapper style2">
-					 <div class="title">{today_date}</div> 
+					 <div class="title">2025년 3월 20일</div> 
 					<div class="container">
 
 						<!-- Content -->
 							<div id="content">
 								<article class="box post">
 									<header class="style1">
-										<h2>{title_text}</h2>
+										<h2>연습용 웹사이트</h2>
 										<p>Tempus feugiat veroeros sed nullam dolore</p>
 									</header>
 									<a href="#" class="image featured">
 										<img src="images/pic01.jpg" alt="" />
 									</a>
-									{main_text}
+									<p>연습 웹사이트 첫번째<br>연습 웹사이트 첫번째<br>연습 웹사이트 첫번째<br></p>
 
 
 								
@@ -125,8 +114,3 @@ html_text=f"""
 
 	</body>
 </html>
-"""
-with open(f"html5up-escape-velocity/{file_name}","w",encoding="utf-8") as f:
-    f.write(f"{html_text}")
-
-    

@@ -1,15 +1,3 @@
-from datetime import datetime
-
-now=datetime.now()
-today_date=f"{now.year}년 {now.month}월 {now.day}일"
-
-#파이썬으로 html만들기
-
-file_name="index.html"
-title_text="연습용 웹사이트"
-
-main_text="<p>연습 웹사이트 첫번째<br>연습 웹사이트 첫번째<br>연습 웹사이트 첫번째<br></p>"
-html_text=f"""
 <!DOCTYPE HTML>
 
 <html>
@@ -37,24 +25,49 @@ html_text=f"""
 
 			<!-- Main -->
 				<div id="main" class="wrapper style2">
-					 <div class="title">{today_date}</div> 
+					<!-- <div class="title">No Sidebar</div> -->
 					<div class="container">
 
 						<!-- Content -->
 							<div id="content">
 								<article class="box post">
 									<header class="style1">
-										<h2>{title_text}</h2>
+										<h2>Lorem ipsum dolor sit amet magna egestas<br class="mobile-hide" />
+										morbi bibendum sed malesuada</h2>
 										<p>Tempus feugiat veroeros sed nullam dolore</p>
 									</header>
 									<a href="#" class="image featured">
 										<img src="images/pic01.jpg" alt="" />
 									</a>
-									{main_text}
-
-
-								
-
+									<p>Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget.
+									odio eleifend. Duis commodo fringilla commodo. Aliquam erat volutpat. Vestibulum
+									facilisis leo magna. Cras sit amet urna eros, id egestas urna. Quisque aliquam
+									tempus euismod. Vestibulum ante ipsum primis in faucibus.</p>
+									<p>Phasellus nisl nisl, varius id porttitor sed, pellentesque ac orci. Pellentesque
+									habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Morbi
+									bibendum justo sed mauris vehicula malesuada aliquam elit imperdiet. Aliquam eu nibh
+									lorem, eget gravida mi. Duis odio diam, luctus et vulputate vitae, vehicula ac dolor.
+									Pellentesque at urna eget tellus lobortis ultrices sed non erat. Donec eget erat non
+									magna volutpat malesuada quis eget eros. Nullam sodales cursus sapien, id consequat
+									leo suscipit ut. Praesent id turpis vitae turpis pretium ultricies. Vestibulum sit
+									amet risus elit.</p>
+									<p>Donec consectetur vestibulum dolor et pulvinar. Etiam vel felis enim, at viverra
+									ligula. Ut porttitor sagittis lorem, quis eleifend nisi ornare vel. Praesent nec orci
+									eget quam rutrum bibendum. Proin pellentesque diam non ligula commodo tempor. Vivamus
+									eget urna nibh. Curabitur non fringilla nisl. Donec accumsan interdum nisi, quis
+									tincidunt felis sagittis eget. Donec elementum ligula dignissim sem pulvinar non semper
+									odio eleifend. Duis commodo fringilla commodo. Aliquam erat volutpat. Vestibulum
+									facilisis leo magna. Cras sit amet urna eros, id egestas urna. Quisque aliquam
+									tempus euismod. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices
+									posuere cubilia.</p>
+									<p>Phasellus nisl nisl, varius id porttitor sed, pellentesque ac orci. Pellentesque
+									habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Morbi
+									bibendum justo sed mauris vehicula malesuada aliquam elit imperdiet. Aliquam eu nibh
+									lorem, eget gravida mi. Duis odio diam, luctus et vulputate vitae, vehicula ac dolor.
+									Pellentesque at urna eget tellus lobortis ultrices sed non erat. Donec eget erat non
+									magna volutpat malesuada quis eget eros. Nullam sodales cursus sapien, id consequat
+									leo suscipit ut. Praesent id turpis vitae turpis pretium ultricies. Vestibulum sit
+									amet risus elit.</p>
 								</article>
 							</div>
 
@@ -125,8 +138,3 @@ html_text=f"""
 
 	</body>
 </html>
-"""
-with open(f"html5up-escape-velocity/{file_name}","w",encoding="utf-8") as f:
-    f.write(f"{html_text}")
-
-    
