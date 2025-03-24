@@ -44,7 +44,7 @@ driver.quit()
 
 soup=BeautifulSoup(html,"html.parser")
 
-
+#1
 items=soup.select("[class=search-product]")
 
 rank=1
@@ -72,9 +72,7 @@ for item in items:
 
     print(img_url)
     print()
-    img_req=requests.get(img_url)
-    with open(f"html5up-escape-velocity/{rank}.jpg","wb") as f:
-        f.write(img_req.content)
+   
 
 
     rank+=1
