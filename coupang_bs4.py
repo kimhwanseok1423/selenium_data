@@ -44,7 +44,7 @@ driver.quit()
 
 soup=BeautifulSoup(html,"html.parser")
 
-#1
+#112312
 items=soup.select("[class=search-product]")
 
 rank=1
