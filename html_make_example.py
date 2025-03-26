@@ -4,7 +4,7 @@ now=datetime.now()
 today_date=f"{now.year}년 {now.month}월 {now.day}일"
 
 #파이썬으로 html만들기
-
+# 쿠팡 셀레니움 크롤링
 file_name="index.html"
 title_text="연습용 웹사이트"
 
