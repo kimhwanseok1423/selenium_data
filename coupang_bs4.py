@@ -15,7 +15,7 @@ import random
 # 123456
 random_sec=random.uniform(3,5)
 
-user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36"
+user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36"
 options=Options()
 print(random_sec)
 options.add_argument(f"user-agent={user_agent}")
@@ -68,14 +68,16 @@ for item in items:
         
     else:
         img_url=f"http:{thumb['src']}"
-        
-
+    img_url=img_url.replace("320x320ex","1000x1000ex")
     print(img_url)
     print()
    
 
 
     rank+=1
+
+    if rank == 11:
+        break
 
 time.sleep(random_sec)
 
