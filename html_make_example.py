@@ -102,7 +102,7 @@ for item in items:
     # elif rank % 3 == 2:
     #     sub_text1 += f"<a href='{link}' target='_blank' class='image featured'><img src='{img_url}' alt='' /></a> <p><h3>{rank}위:{name.text}</h3><b> 가격 : {price.text}원</b></p><ul class='actions'><li><a href='#' class='button style1'>Learn More</a></li>"
 
-    # elif rank % 3 == 0:
+    # elif rank % 3 == 0: 1
     #     sub_text2 += f"<a href='{link}' target='_blank' class='image featured'><img src='{img_url}' alt='' /></a> <p><h3>{rank}위:{name.text}</h3><b> 가격 : {price.text}원</b></p><ul class='actions'><li><a href='#' class='button style1'>Learn More</a></li>"
     if rank == 1:
         main_text = f"""<a href='{link}' target='_blank' class='image featured'><img src='{img_url}' alt='' /></a> <p><h2>{rank}위: {name.text}</h2><b> 가격 : {price.text}원</b></p>"""
