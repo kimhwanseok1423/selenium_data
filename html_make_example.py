@@ -10,7 +10,7 @@ import requests
 from bs4 import BeautifulSoup
 import time
 import random
-
+import ftplib
 
 # 123456
 random_sec=random.uniform(1,2)
@@ -20,10 +20,14 @@ options=Options()
 print(random_sec)
 options.add_argument(f"user-agent={user_agent}")
 options.add_argument('accept-language=ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7') 
+options.add_argument("--headless")
+options.add_argument('--disable-gpu')  # GPU 비활성화
+options.add_argument('--no-sandbox')  # 권한 관련 이슈 방지
+options.add_argument('--disable-dev-shm-usage')  # 메모리 공유 문제 해결
+options.add_argument("--disable-blink-features=AutomationControlled")
 options.add_argument("--start-maximized")
 options.add_experimental_option("detach",True)
 options.add_experimental_option("excludeSwitches",["enable-logging"])
-options.add_argument("--disable-blink-features=AutomationControlled")
 
 
 
@@ -234,4 +238,24 @@ html_text=f"""
 with open(f"html5up-escape-velocity/{file_name}","w",encoding="utf-8") as f:
     f.write(f"{html_text}")
 
-    
+
+ftp_domain="kcss4499.dothome.co.kr"
+ftp_id="kcss4499"
+ftp_pw="kcss1014!"
+
+ftp=ftplib.FTP()
+ftp.connect(ftp_domain.strip(),21)
+ftp.login(ftp_id,ftp_pw)
+
+
+# ftp접속후 폴더로 이동 (cwd)  
+ftp.cwd("./html")
+
+my_file=open(f"html5up-escape-velocity/{file_name}","rb")
+
+#이미지 파일을 올릴경우 바이너리(jpg ,png등) , storlines는 .txt,.html,.csv등 텍스트 파일
+ftp.storlines(f"STOR {file_name}",my_file)
+my_file.close()
+
+ftp.close()
+
