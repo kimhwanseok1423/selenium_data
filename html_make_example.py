@@ -46,15 +46,6 @@ time.sleep(random_sec)
 
 html=driver.page_source
 
-
-
-
-
-
-
-
-
-
 soup=BeautifulSoup(html,"html.parser")
 
 #112312
