@@ -27,14 +27,23 @@ service=Service(ChromeDriverManager().install())
 
 
 driver=webdriver.Chrome(service=service,options=options)
+driver.implicitly_wait(10)
 driver.get(base_url)
-time.sleep(3) 
+time.sleep(2)
+
+driver.execute_script("window.scrollTo(0,2000)")
+time.sleep(2)
+
 html=driver.page_source
+driver.quit()
+
+
 soup=BeautifulSoup(html,"html.parser")
+
 # print(html[:1000])
 ## class가 뒤에 __T떙떙떙 처럼 자주바뀌기 때문에 class를 이런식으로 하면 뒤에껄 안쓰고 할수있음
 base_divs=soup.select("[class^=basicProductCard_basic_product_card]")
-
+print(len(base_divs))
 
 main_text_list=[]
 for base_div in base_divs:
@@ -42,7 +51,7 @@ for base_div in base_divs:
     ad_button=base_div.select_one("[class^=advertisementTag_icon]")
     
     if ad_button:
-        print("광고는 넘어갑니다")
+        
         continue
 
     title=base_div.select_one("[class^=basicProductCardInformation_title]")
@@ -62,7 +71,7 @@ for base_div in base_divs:
     print(prod_text)
     print()
 
-    main_text_list.append(prod_text)
+    
 
-print(main_text_list)
+print(prod_text)
 driver.quit()
